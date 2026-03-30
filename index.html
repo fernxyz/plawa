@@ -290,7 +290,8 @@ function App(){
         background:"linear-gradient(150deg,#1C3A20 0%,#2C5A34 60%,#3D7A48 100%)",
         flexShrink:0,
         transform:headerHidden?"translateY(-100%)":"translateY(0)",
-        transition:"transform 0.25s ease",
+        marginTop:headerHidden?"-200px":"0px",
+        transition:"transform 0.25s ease, margin-top 0.25s ease",
         padding:"max(env(safe-area-inset-top,0px),24px) 16px 12px",
       }}>
         <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:6}}>
@@ -611,7 +612,8 @@ function PlantModal({mode,plant,apiKey,onSave,onClose}){
         if(!apiKey){setAiError("No API key — tap ⚙️ to add one.");return;}
         setIdentifying(true);setAiError(null);setAiDone(false);
         try{
-          const res=await identifyPlant(ev.target.result.split(",")[1],f.type||"image/jpeg",apiKey);
+          // Use compressed image for API call to stay under 5MB limit
+          const res=await identifyPlant(compressed.split(",")[1],"image/jpeg",apiKey);
           setName(toTitleCase(res.name||""));setFrequency(res.frequency||7);setInitialNote(res.initialNote||"");setAiDone(true);
         }catch(err){setAiError("Couldn't identify — fill in manually. ("+err.message+")");}
         finally{setIdentifying(false);}

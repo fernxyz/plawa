@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"/>
+<meta name="theme-color" content="#1C3A20"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="Plawa"/>
+<title>Plawa 🌿</title>
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAGj0lEQVR4nO3cTZLUOBSFUVUGy4AIWEAPewJLYX0shZowZAFUBLUPepDtwum0nbKsn/fe/c6oB3QiyfdKclYFTwlNvP/88U/Nz3t9fnmq+Xm4YlFPqB3yUpSjHAuXyUrYc1GKPCzSBm+Bf4RCrGNRZqKFfgtl+Et+IVRCv0W9DJKTVw/9FsUySE2Y4OdRKoLERAl+GYUihJ0goa8rahnCTYrgtxWtCJfRA6iJ8LcXbY1DtDnaQ/EiwmngegIE3wbPRXA5cIJvk8ciuHsHIPx2eXw2bhrrcXGVeTkNXJwAhN8fL8/MfAG8LCTueXh2Zo8pD4uHfFavRCZPAMIfj9Vnaq4AVhcK51l8tmaOJYuLg3asXIlMnACEX4+VZz68AFYWAv1ZePZDC2BhATDW6AwMK8DoicOOkVkYUgDCj6VRmeheAMKPLSOy0bUAhB+P9M5ItwIQfuTqmZUuBSD8OKpXZpoXgPCjVI/sNC0A4cdZrTPUrACEH7W0zNLwX4UARmpSAHZ/1NYqU9V/JZXwb/v9/VfWn/vw5VPjkfhV+9eoq34Y4V+XG/wlirCuZgne1fog3CoN/dZnUIY2qjWJ3f+qRvD3UISrWqdAlQ8h/GXB/+frv2///fPbj0P/L0WoU4LT3wIR/va7vpW/05oa2ePnACeNDCIlOO9UAdR3fwsBtDCGkc5msLgAhN9O8CyNZYQzWeQKVMBi4CyOyYOiAijv/paDZnlsrZVmkhPgAA8B8zBGSw4XQHX39xQsT2OtqSSbnAAZPAbK45hHOFQA1d0ffhzNaHYBVMPveSf1PPYzjmSVKxCkZRWA3d+vCHMokZtZTgBIowAbIu2ckeZS28MCqF5/4F9OdjkBVkTcMSPOqYbdArD7w7tHGeYEWIi8U0aeW6nNArD7I4q9LHMCzCjskApzPIICQNpqARSvP0o7o9JcJ1uZ5gSANAqQNHdExTmvuSuA4vUHGtayzQkAaRQA0m4KoHj9Ub4LK859mXFOAEijAJBGASDtrQCK939ommdd+gRQfAlcUl8D6QIAFADSKACkXVLSfAFWv/vOKa7FlHlOAEijAJBGASCNAkAaBYA0CgBpF8WvQIGUrl+FcgJAGgWANAoAaRQA0igApFEASKMAkEYBII0CQBoFgDQKAGkUANIoAKRRAEijAJBGASCNAkAaBYA02QJ8+PJp9BDMUF6Ly+vzy9PoQQAjvD6/PMmeAEBKwlcgICXxAijffSfqayBdAIACQBoFgLRLStevg0YPBOhpyrz8CaD8Eqg894l8AaCNAkAaBYC0twIovwgr3oUV5zyZZ50TANIowP+UdkSluT5CASDtpgDK7wEpaeyMCnPcs8w4JwCkUYCFyDtk5LmVuiuA+jUIca1lmxNgRcSdMuKcaqAAkLZaAK5BsXbMSHMptZVpTgBIowA7IuycEebQ0mYBuAYhir0scwI84HkH9Tz2XnYLwCkA7x5lmBMgg8ed1OOYR3hYAE6BK0+B8jTWlnKyywlwgIdgeRijJRQA0rIKwDXoL8s7rOWx9Zab2exgv//88U/5cOL5/f3X6CHcIPy3cguQfQXiFLhlKXCWxmLBkaweDjUnwb1RpwHBv3d0o+YluIIRQST8dRwuAFehdT0DSfjXlWTzXYuBqJqC2epKRPDrK7oCcQrsaxFUwr+vNJOcAI2sBTb3ZCDs/ZzayflGqNxWGQj/cWduJKe+BeIqhNHOZpCvQSHtdAE4BTBKjexVOQEoAXqrlblqVyBKgF5qZo13AEirWgBOAbRWO2PVTwBKgFZaZKvJFYgSoLZWmeIdANKaFYBTALW0zFLTE4AS4KzWGWp+BaIEKNUjO13eASgBjuqVmW4vwZQAuXpmpeu3QJQAj/TOSPevQSkBtozIxpCfA1ACLI3KxLAfhFECTEZmYehPgikBRmdg+K9CjF4AjGPh2Q8vQEo2FgJ9WXnmZv5doGlB+KdWYrMS/ImpwUwoQUzWwp+SkSvQksWFwjlWn6nJQc1xGvhmNfgTkyfAnPUFxDYPz858AVLysZC45eWZuRjkHFci27wEf+LiBJjztsBKPD4bdwOe4zSwwWPwJ24HPkcRxvAc/In7CcxRhD4iBH/i7h1gT6QHY1W0NQ41mTlOg7qiBX8SclJLlKFM1NDPhZ/gHEXIoxD8icxE5yjCOqXgT+QmvKReBsXQz0lPfkmlDOqhn2MhNkQrA6Ffx6Jk8lYIAp+HRTrBSikIezkWrpHa5SDkbfwHrq5opx7WNJ8AAAAASUVORK5CYII="/>
+<link rel="manifest" href="data:application/manifest+json,%7B%0A%20%20%22name%22%3A%22Plawa%20%E2%80%93%20Plant%20Waterer%22%2C%0A%20%20%22short_name%22%3A%22Plawa%22%2C%0A%20%20%22start_url%22%3A%22.%22%2C%0A%20%20%22display%22%3A%22standalone%22%2C%0A%20%20%22background_color%22%3A%22%23F6F1EA%22%2C%0A%20%20%22theme_color%22%3A%22%231C3A20%22%2C%0A%20%20%22icons%22%3A%5B%0A%20%20%20%20%7B%22src%22%3A%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAGj0lEQVR4nO3cTZLUOBSFUVUGy4AIWEAPewJLYX0shZowZAFUBLUPepDtwum0nbKsn/fe/c6oB3QiyfdKclYFTwlNvP/88U/Nz3t9fnmq%2BXm4YlFPqB3yUpSjHAuXyUrYc1GKPCzSBm%2BBf4RCrGNRZqKFfgtl%2BEt%2BIVRCv0W9DJKTVw/9FsUySE2Y4OdRKoLERAl%2BGYUihJ0goa8rahnCTYrgtxWtCJfRA6iJ8LcXbY1DtDnaQ/EiwmngegIE3wbPRXA5cIJvk8ciuHsHIPx2eXw2bhrrcXGVeTkNXJwAhN8fL8/MfAG8LCTueXh2Zo8pD4uHfFavRCZPAMIfj9Vnaq4AVhcK51l8tmaOJYuLg3asXIlMnACEX4%2BVZz68AFYWAv1ZePZDC2BhATDW6AwMK8DoicOOkVkYUgDCj6VRmeheAMKPLSOy0bUAhB%2BP9M5ItwIQfuTqmZUuBSD8OKpXZpoXgPCjVI/sNC0A4cdZrTPUrACEH7W0zNLwX4UARmpSAHZ/1NYqU9V/JZXwb/v9/VfWn/vw5VPjkfhV%2B9eoq34Y4V%2BXG/wlirCuZgne1fog3CoN/dZnUIY2qjWJ3f%2BqRvD3UISrWqdAlQ8h/GXB/%2Bfrv2///fPbj0P/L0WoU4LT3wIR/va7vpW/05oa2ePnACeNDCIlOO9UAdR3fwsBtDCGkc5msLgAhN9O8CyNZYQzWeQKVMBi4CyOyYOiAijv/paDZnlsrZVmkhPgAA8B8zBGSw4XQHX39xQsT2OtqSSbnAAZPAbK45hHOFQA1d0ffhzNaHYBVMPveSf1PPYzjmSVKxCkZRWA3d%2BvCHMokZtZTgBIowAbIu2ckeZS28MCqF5/4F9OdjkBVkTcMSPOqYbdArD7w7tHGeYEWIi8U0aeW6nNArD7I4q9LHMCzCjskApzPIICQNpqARSvP0o7o9JcJ1uZ5gSANAqQNHdExTmvuSuA4vUHGtayzQkAaRQA0m4KoHj9Ub4LK859mXFOAEijAJBGASDtrQCK939ommdd%2BgRQfAlcUl8D6QIAFADSKACkXVLSfAFWv/vOKa7FlHlOAEijAJBGASCNAkAaBYA0CgBpF8WvQIGUrl%2BFcgJAGgWANAoAaRQA0igApFEASKMAkEYBII0CQBoFgDQKAGkUANIoAKRRAEijAJBGASCNAkAaBYA02QJ8%2BPJp9BDMUF6Ly%2Bvzy9PoQQAjvD6/PMmeAEBKwlcgICXxAijffSfqayBdAIACQBoFgLRLStevg0YPBOhpyrz8CaD8Eqg894l8AaCNAkAaBYC0twIovwgr3oUV5zyZZ50TANIowP%2BUdkSluT5CASDtpgDK7wEpaeyMCnPcs8w4JwCkUYCFyDtk5LmVuiuA%2BjUIca1lmxNgRcSdMuKcaqAAkLZaAK5BsXbMSHMptZVpTgBIowA7IuycEebQ0mYBuAYhir0scwI84HkH9Tz2XnYLwCkA7x5lmBMgg8ed1OOYR3hYAE6BK0%2BB8jTWlnKyywlwgIdgeRijJRQA0rIKwDXoL8s7rOWx9Zab2exgv//88U/5cOL5/f3X6CHcIPy3cguQfQXiFLhlKXCWxmLBkaweDjUnwb1RpwHBv3d0o%2BYluIIRQST8dRwuAFehdT0DSfjXlWTzXYuBqJqC2epKRPDrK7oCcQrsaxFUwr%2BvNJOcAI2sBTb3ZCDs/ZzayflGqNxWGQj/cWduJKe%2BBeIqhNHOZpCvQSHtdAE4BTBKjexVOQEoAXqrlblqVyBKgF5qZo13AEirWgBOAbRWO2PVTwBKgFZaZKvJFYgSoLZWmeIdANKaFYBTALW0zFLTE4AS4KzWGWp%2BBaIEKNUjO13eASgBjuqVmW4vwZQAuXpmpeu3QJQAj/TOSPevQSkBtozIxpCfA1ACLI3KxLAfhFECTEZmYehPgikBRmdg%2BK9CjF4AjGPh2Q8vQEo2FgJ9WXnmZv5doGlB%2BKdWYrMS/ImpwUwoQUzWwp%2BSkSvQksWFwjlWn6nJQc1xGvhmNfgTkyfAnPUFxDYPz858AVLysZC45eWZuRjkHFci27wEf%2BLiBJjztsBKPD4bdwOe4zSwwWPwJ24HPkcRxvAc/In7CcxRhD4iBH/i7h1gT6QHY1W0NQ41mTlOg7qiBX8SclJLlKFM1NDPhZ/gHEXIoxD8icxE5yjCOqXgT%2BQmvKReBsXQz0lPfkmlDOqhn2MhNkQrA6Ffx6Jk8lYIAp%2BHRTrBSikIezkWrpHa5SDkbfwHrq5opx7WNJ8AAAAASUVORK5CYII%3D%22%2C%22sizes%22%3A%22192x192%22%2C%22type%22%3A%22image/png%22%2C%22purpose%22%3A%22any%20maskable%22%7D%2C%0A%20%20%20%20%7B%22src%22%3A%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAATfElEQVR4nO3dS5LbSJYFUJcsl6EyUy2ghz1RLaXX10upnNSwF1BpVrkP9SDEVESIDIKEA/4%2B54zTTCHiwe/FAxX5aQBpffn29fvKP//P3//4tPLPB57n5oVAVgf60RQGiMPNCCeqHvB7KQhwHjcbHEDQz6UYwHxuKthB0K%2BlGMDz3DywkbDPQSmAbdwocIPAr0EhgOvcGPCDwO9BIYAXbgTaEviMoRDQl8GnDYHPFgoBXRh0ShP67KEMUJnhphSBz5EUAioxzKQn9FlBGSA7A0xKQp9IlAEyMrSkIfTJQBkgC4NKaEKfzJQBIjOchCT4qUQRICJDSRhCnw6UAaIwiCwn%2BOlIEWA1A8gSQh9%2BUgZYwdBxKsEPtykCnMmwcTihD49TBjiaAeMwgh/2UwQ4isFiOsEP8ykCzGagmEbww/EUAWYxSOwm%2BOF8igB7GSCeJvhhPUWAZxkcHib4IR5FgEcZGDYT/BCfIsBWBoW7BD/kowhwjwHhJsEP%2BSkC3GIw%2BIXgh3oUAd4zEPxF8EN9igAXn1f/AMQg/KEH9zoXmmBzDgPoyzagNxe/KcEPXCgCPbnozQh%2B4BZFoBffAWhE%2BAMfcUb0ou014KYGHmUbUJ8NQHHCH3iGs6M%2BDa8oNy8wi21ATS5qMYIfOIoiUItXAIUIf%2BBIzphatLkC3JTA2WwD8rMBSE74Ays4e/LT4JJy8wFR2AbkZAOQkPAHInEm5aQAJONGAyJyNuVjbZOEmwvIwiuBHGwAEhD%2BQCbOrBwUgODcSEBGzq74rGmCcvMAVXglEJMNQEDCH6jEmRaTAhCMGwWoyNkWj7VMEG4OoAuvBGKwAQhA%2BAOdOPNiUAAWcyMAHTn71lMAFnIDAJ05A9fyHmYBQw/wlu8FnM8G4GTCH%2BBXzsbzKQAnMuAAtzkjz6UAnMRgA9znrDyPAnACAw2wnTPzHL50cSBDDLCPLwcexwbgIMIfYD9n6XEUgAMYWIB5nKnHUAAmM6gA8zlb51MAJjKgAMdxxs6lAExiMAGO56ydRwGYwEACnMeZO4cCsJNBBDifs3c/BWAHAwiwjjN4HwXgSQYPYD1n8fMUgCcYOIA4nMnPUQAeZNAA4nE2P04BeIABA4jLGf0YBWAjgwUQn7N6OwVgAwMFkIczexsF4A6DBJCPs/s%2BBeADBgggL2f4xxSAGwwOQH7O8tsUgCsMDEAdzvTrFIB3DApAPc72XykArxgQgLqc8W8pAD8YDID6nPU/KQDDQAB04sx/0b4AGASAfpz9zQuAAQDoq3sGtC4AANBV2wLQvfkB0DsLWhaAzhccgLe6ZkK7AtD1QgNwW8dsaFUAOl5gALbplhFtCkC3CwvA4zplRZsCAAD81KIAdGp0AOzTJTPKF4AuFxKAeTpkR%2BkC0OECAnCM6hlStgBUv3AAHK9ylpQtAMB9//nnv1f/CMAin1b/AEeo3NjglrPC/G//%2BPspfw5E8ufvf5TLy3J/IeFPJ6uf4JUBOqlWAkr9ZYQ/HawO/VuUATqoVAJ%2BW/0DAPdFDf3XXv%2BMygDEV6bJePqnmgyhv4UyQDVVtgAl/hLCn0qqBP97igCVVCgB6f8ZoPCnkqrhP0btvxv9VMge3wGAALqE4%2BXvaRsA66VeYVRoYPTWJfhvUQTILvOrgLQ/uPAns1XB/1//8993/5v/%2B99/nfCTvKUIkFnWEpDyOwDCn8y6P/Vf4zMhs6yZ5DsAcBIh9zHfD4BzpdsAZG1a9Cb8t/NZkVHGbEpVADJ%2BwCDQHuczI6NsGeUVABxEiO3jlQAcK80GIFuzojfhP4/PkkwyZVWKApDpAwWBNZ/PlEyyZFaKAgBZCKrj%2BGxhrvDfAcjSpOhNOJ3D9wLI4su3r9%2Bj/4IgGwDYSfifz2cO%2B4UuAJ7%2BiU4QreOzJ7roGRa2AET/4EAArecaEF3kLAtbACAywROHawHPCVkAIjcmAHhE1EwLVwCiflBw4YkzHteE6CJmW7gCAJEJmrhcG3hMqAIQsSHBhYCJzzUismgZF6oAQFSCJQ/XCrYJUwCiNSO4ECj5uGZEFSnrwhQAAOA8IQpApEYEr3mSzMu1I6oombe8AET5IOA9AZKfa0hUEbJveQGAiARHHa4lXLe0AERoQPCewKjHNSWi1RloAwAADS0rAKubD1zjSbEu15aIVmahDQD8ICDqc43hpyUFwNM/ALxYlYk2ADA8GXbiWsOL0wuAp3%2BiEQj9uOZEsyIbbQBoTRD05drT3akFwNM/AFx3dkbaANCWJ0DMAJ2dVgA8/ROJg58Ls0AkZ2alDQAANHRKAfD0TySe%2BHjPTBDJWZlpAwAADR1eADz9E4knPW4xG0RyRnbaAABAQ4cWAE//ROIJj3vMCJEcnaE2AADQ0GEFwNM/kXiyYyuzQiRHZqkNAAA0dEgB8PQPAHMclak2AJRnpcujzAwdKAAA0ND0AmD9TySe5HiW2SGSI7LVBgAAGppaADz9E4knOPYyQ0QyO2NtAACgIQWAkjy5MYtZoqppBcD6HwCONTNrbQAAoKEpBcDTP5FY2TKbmSKSWZlrAwAADSkAlOJJjaOYLarZXQCs/wHgXDOy1wYAABraVQA8/ROJFS1HM2NEsjeDbQAAoCEFgBI8mXEWs0YVTxcA638AWGtPFtsAkJ4nMs5m5qhAAQCAhp4qANb/ABDDs5lsA0BqVrGsYvbITgEAgIYeLgDW/0ThCYzVzCBRPJPNNgAA0JACAAANPVQArP%2BJwuqVKMwiUTya0TYAANCQAgAADSkAANDQ5gLg/T9ReOdKNGaSKB7JahsAAGhIAQCAhjYVAOt/AMhha2bbAJCKd61EZTbJRgEAgIYUAABo6G4B8P6fKKxYic6MEsWW7LYBAICGFAAAaEgBAICGPiwA3v8ThXerZGFWieJehtsAAEBDCgAANKQAAEBDNwuA9/8AkNtHWW4DQHi%2BVEU2ZpYMFAAAaEgBAICGrhYA7/8BoIZbmW4DAAANKQAA0JACQGi%2BTU1WZpfoFAAAaOiXAuALgABQy7VstwEAgIYUAABoSAEAgIYUAMLyLWqyM8NEpgAAQENvCoB/AQAANb3PeBsAAGhIAQCAhhQAAGhIAQCAhhQAAGjorwLgXwAAQG2vs94GgJD8AhWqMMtEpQAAQEMKAAA0pAAAQEMKAAA0pAAAQEMKAAA09HkMvwMAALq4ZL4NAAA0pAAAQEMKAOH4zWlUY6aJSAEAgIYUAABoSAEAgIYUAABoSAEAgIYUAABoSAEAgIYUAABo6LP/DwAA9PLl29fvNgAA0JACAAANKQAA0JACAAANKQAA0JACAAANKQAA0JACAAANKQAA0JACAAANKQAA0JACAAANKQAA0JACAAANKQAA0JACAAANKQAA0JACAAANKQAA0JACQDh/%2B8ffV/8IMJWZJiIFAAAaUgAAoCEFAAAaUgAAoCEFAAAaUgAAoCEFAAAaUgAAoCEFAAAaUgAIyW9OowqzTFQKAAA09PnP3//4tPqHAADO8%2Bfvf3yyAQCAhhQAAGhIAQCAhhQAAGhIAQCAhhQAAGhIASAsv0CF7MwwkSkAANCQAgAADSkAANCQAgAADX0e4%2BV3Aq/%2BQQCA410y3waA0HyLmqzMLtEpAADQkAIAAA0pAADQkAIAAA0pAADQkAJAeL5NTTZmlgz%2BKgB%2BFwAA1PY6620AAKAhBQAAGlIAAKAhBYAUfKmKLMwqWSgAANDQmwLgXwIAQE3vM94GAAAaUgBIw7tVojOjZKIAAEBDCgAANKQAAEBDvxQA/xKAyLxjJSqzSWTXst0GAAAaUgAAoCEFAAAaUgBIx7tWojGTZHS1APgiIADUcCvTbQAAoCEFAAAaUgBIyTtXojCLZHWzAPgeAADk9lGW2wAAQEMKAGlZvbKaGSQzBQAAGvqwAPgeANF5AmMVs0d09zLcBgAAGlIAAKAhBYD0rGI5m5mjgrsFwPcAACCXLdltA0AJnsg4i1mjCgUAABpSACjDkxlHM2NUsqkA%2BB4AAOSwNbNtAACgIQWAUqxoOYrZoprNBcBrAACI7ZGstgGgHE9qzGamqEgBAICGFAAAaOihAuB7AGRhZcssZoksHs1oGwAAaEgBoCxPbuxlhqjs4QLgNQAAxPJMNtsAUJonOJ5ldqhOAQCAhp4qAF4DkIknOR5lZsjk2Uy2AQCAhhQAWvBEx1ZmhS6eLgBeAwDAWnuy2AaANjzZcY8ZoRMFAAAa2lUAvAYgG0943GI2yGZvBtsAAEBDuwuALQDZeNLjPTNBNjOy1wYAABpSAGjJEx8XZoGuphQArwHIyMGPGSCjWZlrAwAADU0rALYAZOQJsC/XnoxmZq0NAO0Jgn5cc1AAAKClqQXAawCy8kTYh2tNVrMz1gYAABqaXgBsAcjKk2F9rjFZHZGtNgDwioCoy7WFtxQAAGjokALgNQCZeVKsxzUls6My1QYArhAYdbiWcN1hBcAWgOwER36uIdkdmaU2APABAZKXawcfO7QA2AJQgSDJxzWjgqMz1AYANhAoebhWsM3hBcAWAAAec0Z22gDARp4s43ONYLtTCoAtAFUImLhcG6o4KzNtAOBBgiYe1wQed1oBsAWgEoETh2tBJWdm5amh/OXb1%2B9n/nlwtP/889%2Brf4TWhD/VnFkATn0FYAtANQJoHZ891Zydkb4DADsJovP5zGG/0wuALQAVCaTz%2BKypaEU22gDAJILpeD5jmGfZ07gvBFKZLwfOJfipbNVm3AYADiCw5vFZwjGWFQDfBaA6wbWfz5DqVmahDQAcSIA9z2cHx1paAGwB6ECQPc5nRgerM9AGAE4g0LbzWcE5QjyB%2BxcBdOJfCFwn%2BOlk9dP/GEEKwBhKAP0oAi8EP91ECP8xxvht9Q8AXV2Cr2sREPywVogWcmELQGddioDgp7MoT/9j2ABAGNU3AoIfYgnTRC5sAeBFlSIg%2BOFFpKf/MWwAIKzXwZmtDAh9iC9UG7mwBYDbopYBoQ%2B3RXv6HyNoARhDCYAtVpcBoQ/3RQz/MbwCgNRWvCYQ%2BlBDyFZyYQsA%2B8wqBUIfnhP16X%2BM4P8vgMgfHAB8JHqGhS4AAMAxwheA6A0KAN7LkF3hCwAAMF%2BKApChSQHAGHkyK0UBGCPPBwpAX5myKk0BAADmSVUAMjUrAHrJllGpCsAY%2BT5gAOrLmE3pCgAAsF/KApCxaQFQU9ZMSlkAxsj7gQNQR%2BYsSlsAxsj9wQOQW/YMSl0AAIDnpC8A2RsYAPlUyJ70BWCMGhcCgByqZE6JAjBGnQsCQFyVsqZMAQAAtitVACo1MwBiqZYxpQrAGPUuEADrVcyWcgVgjJoXCoA1qmZKyQIAAHysbAGo2tgAOE/lLClbAMaofeEAOFb1DCldAMaofwEBmK9DdpQvAGP0uJAAzNElM1oUAADgrTYFoEujA%2BB5nbKiTQEYo9eFBeAx3TKiVQEYo98FBuC%2BjtnQrgCM0fNCA3Bd10xoWQDG6HvBAfipcxa0LQAA0FnrAtC5%2BQF01z0DWheAMQwAQEfOfgVgjGEQADpx5r9QAH4wEAD1Oet/UgBeMRgAdTnj31IA3jEgAPU423%2BlAFxhUADqcKZfpwDcYGAA8nOW36YAfMDgAOTlDP%2BYAnCHAQLIx9l9nwKwgUECyMOZvY0CsJGBAojPWb2dAvAAgwUQlzP6MQrAgwwYQDzO5scpAE8waABxOJOfowA8ycABrOcsfp4CsIPBA1jHGbyPArCTAQQ4n7N3PwVgAoMIcB5n7hwKwCQGEuB4ztp5FICJDCbAcZyxcykAkxlQgPmcrfMpAAcwqADzOFOPoQAcxMAC7OcsPc5vq3%2BAyi6D%2B%2BXb1%2B%2BrfxaATAT/8WwATmCQAbZzZp5DATiJgQa4z1l5HgXgRAYb4DZn5LkUgJMZcIBfORvP50uAC/hyIMALwb%2BODcBCBh/ozBm4lg8/AJsAoBvhv54NQABuBKATZ14MLkIwtgFAVYI/FhuAYNwgQEXOtngUgIDcKEAlzrSYXJTgvBIAshL8sdkABOcGAjJydsWnACTgRgIycWbl4CIl45UAEJXgz8UGIBk3GBCRsykfBSAhNxoQiTMpJxctOa8EgFUEf242AMm5AYEVnD35uYCF2AYARxP8ddgAFOLGBI7kjKnFxSzKNgCYRfDX5KIWpwgAzxL8tXkFUJwbGHiGs6M%2BF7gR2wDgHsHfhw1AI25s4CPOiF5c7KZsA4ALwd%2BTi96cIgB9Cf7eXHzGGIoAdCL4GcN3APjBgQA9uNe5MAj8wjYA6hH8vGcguEkRgPwEP7cYDO5SBCAfwc89BoTNFAGIT/CzlUHhYYoAxCP4eZSB4WmKAKwn%2BHmWwWE3RQDOJ/jZywAxjSIAxxP8zGKQmE4RgPkEP7MZKA6jCMB%2Bgp%2BjGCwOpwjA4wQ/RzNgnEoZgNuEPmcybCyhCMBPgp8VDB3LKQN0JPRZzQAShiJAB4KfKAwiISkDVCL0ichQEpoiQGaCn8gMJ2koA2Qg9MnCoJKSMkAkQp%2BMDC3pKQOsIPTJzgBTijLAkYQ%2BlRhmSlMI2EPgU5nhpg1lgC2EPl0YdNpSCBhD4NOXwYcfFIIeBD68cCPADQpBDQIfrnNjwEYKQQ4CH7Zxo8AOSsFawh6e5%2BaBAygGcwl6mM9NBSdSDD4m6OE8bjYIpHpBEPAQh5sREltdGAQ65PX/L8tXmIhuPhsAAAAASUVORK5CYII%3D%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image/png%22%2C%22purpose%22%3A%22any%20maskable%22%7D%0A%20%20%5D%0A%7D"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;background:#F6F1EA;font-family:"DM Sans",sans-serif;overscroll-behavior:none}
+#root{height:100%}
+input,textarea,button{font-family:"DM Sans",sans-serif}
+::-webkit-scrollbar{display:none}
+input[type=range]{-webkit-appearance:none;height:6px;border-radius:3px;background:#D4EDDA;outline:none;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:#2C5A34;cursor:pointer;box-shadow:0 2px 6px rgba(44,90,52,0.4)}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+if("serviceWorker" in navigator){
+  const blob=new Blob([`
+  const CACHE="plawa-v1";
+  self.addEventListener("install",e=>{self.skipWaiting();});
+  self.addEventListener("activate",e=>{self.clients.claim();});
+  self.addEventListener("fetch",e=>{
+    if(e.request.url.includes("supabase.co")||e.request.url.includes("anthropic.com")||e.request.url.includes("unpkg.com")||e.request.url.includes("fonts.google"))return;
+    e.respondWith(caches.open(CACHE).then(c=>c.match(e.request).then(r=>r||fetch(e.request).catch(()=>r))));
+  });
+`],{type:"application/javascript"});
+  navigator.serviceWorker.register(URL.createObjectURL(blob),{scope:"/"}).catch(()=>{});
+}
+</script>
+<script type="text/babel">
+const SUPABASE_URL="https://gkjgzgyubeelylwcktlb.supabase.co";
+const SUPABASE_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdramd6Z3l1YmVlbHlsd2NrdGxiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ4NzY1MjcsImV4cCI6MjA5MDQ1MjUyN30.KhoI_GzKz8ohbq-kdcJdaYqx1IB1hu3UioszTVt2iuQ";
+const API_KEY_K="plawa-anthropic-key";
+const LEGACY_KEY="plant-waterer-pwa-v2";
+
+const sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
+
+const {useState,useEffect,useRef}=React;
+
+const getTodayStr=()=>new Date().toISOString().split("T")[0];
+const getNowStr=()=>new Date().toISOString();
+
+function daysSince(d){if(!d)return null;return Math.max(0,Math.floor((Date.now()-new Date(d+"T12:00:00").getTime())/86400000));}
+
+function getStatus(p){
+  if(!p.lastWatered)return{label:"Not yet logged",color:"gray",urgency:0};
+  const s=daysSince(p.lastWatered),u=p.frequency-s;
+  if(u<0)return{label:`${Math.abs(u)}d overdue`,color:"red",urgency:3};
+  if(u===0)return{label:"Water today!",color:"orange",urgency:2};
+  if(u<=2)return{label:`Due in ${u}d`,color:"yellow",urgency:1};
+  return{label:`Good for ${u}d`,color:"green",urgency:0};
+}
+
+function pEmoji(n){
+  n=(n||"").toLowerCase();
+  if(n.includes("lime")||n.includes("lemon")||n.includes("citrus"))return"🍋";
+  if(n.includes("dahlia"))return"🌸";
+  if(n.includes("fiddle")||n.includes("fig"))return"🌿";
+  if(n.includes("succulent")||n.includes("cactus"))return"🌵";
+  if(n.includes("rosemary")||n.includes("lavender"))return"🌱";
+  if(n.includes("leucadendron")||n.includes("protea"))return"🌾";
+  if(n.includes("spider"))return"🕸️";
+  if(n.includes("schefflera"))return"🌴";
+  if(n.includes("chinese")||n.includes("aglaonema")||n.includes("evergreen"))return"🪴";
+  if(n.includes("cinnamon")||n.includes("canela"))return"🌳";
+  if(n.includes("audrey")||n.includes("benghal"))return"🌳";
+  if(n.includes("peperomia")||n.includes("watermelon"))return"🫛";
+  if(n.includes("zz")||n.includes("zamio"))return"🪴";
+  if(n.includes("snake")||n.includes("sansevieria"))return"🌿";
+  if(n.includes("pothos"))return"🍃";
+  if(n.includes("monstera"))return"🌿";
+  return"🪴";
+}
+
+const TH={
+  red:{card:"#FFF5F5",border:"#FCA5A5",badge:"#FEE2E2",badgeText:"#991B1B",bar:"#EF4444"},
+  orange:{card:"#FFF7ED",border:"#FDBA74",badge:"#FFEDD5",badgeText:"#92400E",bar:"#F97316"},
+  yellow:{card:"#FEFCE8",border:"#FDE047",badge:"#FEF9C3",badgeText:"#854D0E",bar:"#EAB308"},
+  green:{card:"#F0FDF4",border:"#86EFAC",badge:"#DCFCE7",badgeText:"#166534",bar:"#22C55E"},
+  gray:{card:"#FAFAF9",border:"#E5E7EB",badge:"#F3F4F6",badgeText:"#6B7280",bar:"#D1D5DB"},
+};
+
+const fmtDate=d=>{if(!d)return"";return new Date(d).toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});};
+const fmtDT=d=>{if(!d)return"";return new Date(d).toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric",hour:"numeric",minute:"2-digit"});};
+
+function toTitleCase(s){return(s||"").replace(/\w\S*/g,w=>w.charAt(0).toUpperCase()+w.slice(1));}
+
+function compressImage(dataUrl,maxW=600,quality=0.62){
+  return new Promise(resolve=>{
+    const img=new Image();
+    img.onload=()=>{
+      const scale=Math.min(1,maxW/img.width);
+      const c=document.createElement("canvas");
+      c.width=Math.round(img.width*scale);c.height=Math.round(img.height*scale);
+      c.getContext("2d").drawImage(img,0,0,c.width,c.height);
+      resolve(c.toDataURL("image/jpeg",quality));
+    };
+    img.src=dataUrl;
+  });
+}
+
+function dbToPlant(r){
+  return{id:r.id,name:r.name,location:r.location||"",frequency:r.frequency||7,lastWatered:r.last_watered||null,photo:r.photo||null,photoHistory:r.photo_history||[],careLog:r.care_log||[]};
+}
+function plantToDb(p){
+  return{id:p.id,name:p.name,location:p.location||"",frequency:p.frequency||7,last_watered:p.lastWatered||null,photo:p.photo||null,photo_history:p.photoHistory||[],care_log:p.careLog||[]};
+}
+
+async function sbFetchAll(){
+  const{data,error}=await sb.from("plants").select("*").order("created_at");
+  if(error)throw error;
+  return(data||[]).map(dbToPlant);
+}
+async function sbUpsert(plant){
+  const{error}=await sb.from("plants").upsert(plantToDb(plant));
+  if(error)throw error;
+}
+async function sbDelete(id){
+  const{error}=await sb.from("plants").delete().eq("id",id);
+  if(error)throw error;
+}
+async function sbUpsertMany(plants){
+  if(!plants.length)return;
+  const{error}=await sb.from("plants").upsert(plants.map(plantToDb));
+  if(error)throw error;
+}
+
+async function identifyPlant(b64,mtype,key){
+  const res=await fetch("https://api.anthropic.com/v1/messages",{
+    method:"POST",
+    headers:{"Content-Type":"application/json","x-api-key":key,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},
+    body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:800,messages:[{role:"user",content:[
+      {type:"image",source:{type:"base64",media_type:mtype,data:b64}},
+      {type:"text",text:`Plant expert. Respond ONLY with valid JSON, no backticks, no markdown:
+{"name":"Specific common name e.g. Watermelon Peperomia","frequency":<days between waterings indoors Southern California>,"initialNote":"3-4 sentences: light needs, watering style, fertilizer, one key watch-out.","confidence":"high"|"medium"|"low"}`}
+    ]}]})
+  });
+  const data=await res.json();
+  if(data.error)throw new Error(data.error.message);
+  return JSON.parse(data.content.find(b=>b.type==="text").text.replace(/```json|```/g,"").trim());
+}
+
+function App(){
+  const [plants,setPlants]=useState([]);
+  const [loaded,setLoaded]=useState(false);
+  const [dbError,setDbError]=useState(null);
+  const [apiKey,setApiKey]=useState("");
+  const [showSettings,setShowSettings]=useState(false);
+  const [modal,setModal]=useState(null);
+  const [detail,setDetail]=useState(null);
+  const [confirmDel,setConfirmDel]=useState(null);
+  const [filter,setFilter]=useState("all");
+  const [flash,setFlash]=useState(null);
+  const [saveStatus,setSaveStatus]=useState(null);
+  const [headerHidden,setHeaderHidden]=useState(false);
+  const lastScrollY=useRef(0);
+
+  useEffect(()=>{
+    setApiKey(localStorage.getItem(API_KEY_K)||"");
+    (async()=>{
+      try{
+        let remote=await sbFetchAll();
+        if(remote.length===0){
+          const lsRaw=localStorage.getItem(LEGACY_KEY);
+          if(lsRaw){
+            const lsPlants=JSON.parse(lsRaw);
+            if(lsPlants&&lsPlants.length>0){
+              await sbUpsertMany(lsPlants);
+              localStorage.removeItem(LEGACY_KEY);
+              remote=lsPlants;
+            }
+          }
+        }
+        setPlants(remote);
+      }catch(e){
+        setDbError("Could not connect to database: "+e.message);
+      }finally{setLoaded(true);}
+    })();
+  },[]);
+
+  useEffect(()=>{
+    if(detail){const u=plants.find(p=>p.id===detail.id);if(u)setDetail(u);}
+  },[plants]);
+
+  const showSaved=()=>{setSaveStatus("saved");setTimeout(()=>setSaveStatus(null),2000);};
+  const showErr=()=>setSaveStatus("error");
+
+  const water=id=>{
+    const today=getTodayStr();
+    setPlants(p=>p.map(x=>{
+      if(x.id!==id)return x;
+      const updated={...x,lastWatered:today,careLog:[...(x.careLog||[]),{id:`w${Date.now()}`,date:getNowStr(),text:"💧 Watered today.",source:"manual"}]};
+      sbUpsert(updated).then(showSaved).catch(showErr);
+      return updated;
+    }));
+    setFlash(id);setTimeout(()=>setFlash(null),1500);
+  };
+
+  const addNote=(id,text)=>{
+    setPlants(p=>p.map(x=>{
+      if(x.id!==id)return x;
+      const updated={...x,careLog:[...(x.careLog||[]),{id:`n${Date.now()}`,date:getNowStr(),text,source:"manual"}]};
+      sbUpsert(updated).then(showSaved).catch(showErr);
+      return updated;
+    }));
+  };
+
+  const addPhoto=(id,url)=>{
+    setPlants(p=>p.map(x=>{
+      if(x.id!==id)return x;
+      const hist=[...(x.photoHistory||[]),{url,timestamp:getNowStr()}];
+      const updated={...x,photo:url,photoHistory:hist,careLog:[...(x.careLog||[]),{id:`ph${Date.now()}`,date:getNowStr(),text:"📷 Photo updated.",source:"manual"}]};
+      sbUpsert(updated).then(showSaved).catch(showErr);
+      return updated;
+    }));
+  };
+
+  const saveEdit=plant=>{
+    const isNew=!plant.id;
+    const p={...plant,id:plant.id||Date.now().toString(),photoHistory:plant.photoHistory||[],careLog:plant.careLog||[]};
+    if(isNew)setPlants(prev=>[...prev,p]);
+    else setPlants(prev=>prev.map(x=>x.id===p.id?p:x));
+    sbUpsert(p).then(showSaved).catch(showErr);
+    setModal(null);
+  };
+
+  const remove=id=>{
+    setPlants(p=>p.filter(x=>x.id!==id));
+    sbDelete(id).then(showSaved).catch(showErr);
+    setConfirmDel(null);
+    if(detail?.id===id)setDetail(null);
+  };
+
+  const exportData=()=>{
+    const blob=new Blob([JSON.stringify({version:2,exported:new Date().toISOString(),app:"Plawa",plants},null,2)],{type:"application/json"});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement("a");
+    a.href=url;a.download=`plawa-backup-${new Date().toISOString().split("T")[0]}.json`;
+    a.click();URL.revokeObjectURL(url);
+  };
+
+  const importRef=useRef();
+  const importData=e=>{
+    const f=e.target.files[0];if(!f)return;
+    const r=new FileReader();
+    r.onload=async ev=>{
+      try{
+        const data=JSON.parse(ev.target.result);
+        const imported=data.plants||data;
+        if(!Array.isArray(imported))throw new Error("Invalid format");
+        await sbUpsertMany(imported);
+        setPlants(imported);
+        alert(`Imported ${imported.length} plants successfully!`);
+      }catch(err){alert("Import failed: "+err.message);}
+    };
+    r.readAsText(f);
+  };
+
+  const attn=plants.filter(p=>getStatus(p).urgency>0);
+  const shown=filter==="attention"?attn:filter==="good"?plants.filter(p=>!getStatus(p).urgency):plants;
+
+  if(!loaded)return(
+    <div style={{minHeight:"100vh",background:"#F6F1EA",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:16}}>
+      <div style={{width:64,height:64,borderRadius:"50%",background:"#1C3A20",display:"flex",alignItems:"center",justifyContent:"center",fontSize:32}}>🌿</div>
+      <div style={{fontFamily:"'Playfair Display',serif",fontSize:22,color:"#1C3A20",fontWeight:700}}>Plawa</div>
+      <div style={{color:"#5A9A68",fontSize:14}}>{dbError?"Connection error...":"Loading your garden…"}</div>
+      {dbError&&<div style={{color:"#EF4444",fontSize:13,maxWidth:280,textAlign:"center",padding:"0 20px"}}>{dbError}</div>}
+    </div>
+  );
+
+  return(
+    <div style={{height:"100vh",display:"flex",flexDirection:"column",background:"#F6F1EA",maxWidth:540,margin:"0 auto"}}>
+      <div style={{
+        background:"linear-gradient(150deg,#1C3A20 0%,#2C5A34 60%,#3D7A48 100%)",
+        flexShrink:0,
+        transform:headerHidden?"translateY(-100%)":"translateY(0)",
+        transition:"transform 0.25s ease",
+        padding:"max(env(safe-area-inset-top,0px),24px) 16px 12px",
+      }}>
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:6}}>
+          <div style={{display:"flex",alignItems:"center",gap:10}}>
+            <div style={{width:36,height:36,borderRadius:"50%",background:"rgba(255,255,255,0.15)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:20}}>🌿</div>
+            <div>
+              <div style={{fontFamily:"'Playfair Display',serif",color:"#fff",fontSize:20,fontWeight:700,letterSpacing:0.5}}>Plawa</div>
+              <div style={{color:"#A8D5B5",fontSize:11,display:"flex",alignItems:"center",gap:6}}>
+                {plants.length} plants
+                {saveStatus==="saved"&&<span style={{color:"#86EFAC",fontSize:10,fontWeight:600}}>☁ saved</span>}
+                {saveStatus==="error"&&<span style={{color:"#FCA5A5",fontSize:10,fontWeight:600}}>⚠ save error</span>}
+              </div>
+            </div>
+          </div>
+          <button onClick={()=>setShowSettings(true)} style={{background:"rgba(255,255,255,0.15)",border:"none",color:"#fff",width:34,height:34,borderRadius:"50%",fontSize:16,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center"}}>⚙️</button>
+        </div>
+        {attn.length>0&&(
+          <div style={{background:"rgba(255,255,255,0.12)",borderRadius:10,padding:"6px 10px",display:"flex",alignItems:"center",gap:8,marginBottom:6}}>
+            <span style={{fontSize:14}}>💧</span>
+            <div>
+              <div style={{color:"#fff",fontSize:12,fontWeight:600}}>{attn.length} plant{attn.length>1?"s":""} need attention</div>
+              <div style={{color:"#A8D5B5",fontSize:11,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap",maxWidth:260}}>{attn.map(p=>p.name).join(" · ")}</div>
+            </div>
+          </div>
+        )}
+        <div style={{display:"flex",gap:10}}>
+          {[["all",`All  ${plants.length}`],["attention",`⚠️  ${attn.length}`],["good","✅  Good"]].map(([k,l])=>(
+            <button key={k} onClick={()=>setFilter(k)} style={{
+              padding:"6px 16px",borderRadius:999,fontSize:12,fontWeight:600,border:"none",cursor:"pointer",
+              background:filter===k?"rgba(255,255,255,0.95)":"rgba(255,255,255,0.15)",
+              color:filter===k?"#1C3A20":"#fff",
+              boxShadow:filter===k?"0 2px 6px rgba(0,0,0,0.2)":"none",
+            }}>{l}</button>
+          ))}
+        </div>
+      </div>
+
+      <div id="scroll-area" style={{flex:1,overflowY:"auto",padding:"12px 12px 96px"}}
+        onScroll={e=>{
+          const y=e.target.scrollTop;
+          setHeaderHidden(y>80&&y>lastScrollY.current);
+          lastScrollY.current=y;
+        }}>
+        {shown.length===0&&(
+          <div style={{textAlign:"center",paddingTop:80,color:"#A0ACA2"}}>
+            <div style={{fontSize:48,marginBottom:8}}>🪴</div>
+            <div style={{fontWeight:500,fontSize:15}}>No plants here</div>
+            <div style={{fontSize:13,marginTop:4,color:"#B8C4B9"}}>Tap + to add your first plant</div>
+          </div>
+        )}
+        <div style={{display:"flex",flexDirection:"column",gap:10}}>
+          {shown.map(plant=>(
+            <PlantCard key={plant.id} plant={plant}
+              onTap={()=>setDetail(plant)}
+              onWater={()=>water(plant.id)}
+              onEdit={()=>setModal({mode:"edit",plant})}
+              onDelete={()=>setConfirmDel(plant.id)}
+              flashing={flash===plant.id}/>
+          ))}
+        </div>
+      </div>
+
+      <button onClick={()=>setModal({mode:"add"})} style={{
+        position:"fixed",bottom:"max(24px,env(safe-area-inset-bottom,24px))",right:20,
+        width:52,height:52,borderRadius:"50%",
+        background:"linear-gradient(135deg,#1C3A20,#3D7A48)",color:"#fff",fontSize:24,border:"none",
+        boxShadow:"0 4px 20px rgba(44,90,52,0.5)",cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",zIndex:20,
+      }}>+</button>
+
+      {detail&&<DetailSheet plant={detail} flashing={flash===detail.id}
+        onWater={()=>water(detail.id)} onAddNote={t=>addNote(detail.id,t)}
+        onAddPhoto={u=>addPhoto(detail.id,u)}
+        onEdit={()=>setModal({mode:"edit",plant:detail})}
+        onDelete={()=>setConfirmDel(detail.id)} onClose={()=>setDetail(null)}/>}
+
+      {modal&&<PlantModal mode={modal.mode} plant={modal.plant} apiKey={apiKey} onSave={saveEdit} onClose={()=>setModal(null)}/>}
+
+      {showSettings&&<SettingsSheet apiKey={apiKey}
+        onSave={k=>{localStorage.setItem(API_KEY_K,k);setApiKey(k);setShowSettings(false);}}
+        onClose={()=>setShowSettings(false)}
+        onExport={exportData}
+        onImport={()=>importRef.current.click()}/>}
+      <input ref={importRef} type="file" accept=".json" style={{display:"none"}} onChange={importData}/>
+
+      {confirmDel&&(
+        <div style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.5)",display:"flex",alignItems:"center",justifyContent:"center",zIndex:80,padding:20}}>
+          <div style={{background:"#fff",borderRadius:22,padding:24,maxWidth:290,width:"100%",textAlign:"center"}}>
+            <div style={{fontSize:36,marginBottom:10}}>🗑️</div>
+            <div style={{fontFamily:"'Playfair Display',serif",fontSize:18,fontWeight:700,marginBottom:4,color:"#1A2C1C"}}>Remove plant?</div>
+            <div style={{color:"#8A9B8C",fontSize:13,marginBottom:18}}>This cannot be undone.</div>
+            <div style={{display:"flex",gap:8}}>
+              <button onClick={()=>setConfirmDel(null)} style={{flex:1,padding:"11px 0",borderRadius:12,border:"1.5px solid #E0E8E1",background:"#fff",color:"#5C6B5E",fontWeight:600,cursor:"pointer"}}>Cancel</button>
+              <button onClick={()=>remove(confirmDel)} style={{flex:1,padding:"11px 0",borderRadius:12,border:"none",background:"#EF4444",color:"#fff",fontWeight:600,cursor:"pointer"}}>Remove</button>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function PlantCard({plant,onTap,onWater,onEdit,onDelete,flashing}){
+  const [menu,setMenu]=useState(false);
+  const st=getStatus(plant);const th=TH[st.color];
+  const since=daysSince(plant.lastWatered);
+  const pct=plant.lastWatered?Math.min(100,Math.round((since/plant.frequency)*100)):0;
+  return(
+    <div onClick={onTap} style={{background:flashing?"#E8F5E9":th.card,border:`2px solid ${flashing?"#86EFAC":th.border}`,borderRadius:18,padding:14,boxShadow:"0 2px 8px rgba(0,0,0,0.06)",transition:"all 0.3s",cursor:"pointer"}}>
+      <div style={{display:"flex",gap:10}}>
+        <div style={{width:56,height:56,borderRadius:14,overflow:"hidden",background:"linear-gradient(135deg,#D4EDDA,#B8DCC0)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:26,flexShrink:0}}>
+          {plant.photo?<img src={plant.photo} alt="" style={{width:"100%",height:"100%",objectFit:"cover"}}/>:pEmoji(plant.name)}
+        </div>
+        <div style={{flex:1,minWidth:0}}>
+          <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start"}}>
+            <div style={{minWidth:0}}>
+              <div style={{fontFamily:"'Playfair Display',serif",fontWeight:700,color:"#1A2C1C",fontSize:15,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{plant.name}</div>
+              <div style={{color:"#8A9B8C",fontSize:11,marginTop:1}}>📍 {plant.location||"No location"}</div>
+            </div>
+            <div style={{position:"relative",flexShrink:0}}>
+              <button onClick={e=>{e.stopPropagation();setMenu(!menu);}} style={{background:"none",border:"none",cursor:"pointer",color:"#A0ACA2",fontSize:20,padding:"0 4px",fontWeight:700}}>⋯</button>
+              {menu&&(
+                <div style={{position:"absolute",right:0,top:28,background:"#fff",borderRadius:12,boxShadow:"0 8px 24px rgba(0,0,0,0.15)",zIndex:20,overflow:"hidden",minWidth:120}}>
+                  <button onClick={e=>{e.stopPropagation();onEdit();setMenu(false);}} style={{width:"100%",textAlign:"left",padding:"10px 14px",border:"none",background:"none",cursor:"pointer",fontSize:14,color:"#374151"}}>✏️ Edit</button>
+                  <button onClick={e=>{e.stopPropagation();onDelete();setMenu(false);}} style={{width:"100%",textAlign:"left",padding:"10px 14px",border:"none",background:"none",cursor:"pointer",fontSize:14,color:"#EF4444"}}>🗑️ Remove</button>
+                </div>
+              )}
+            </div>
+          </div>
+          <div style={{display:"inline-block",marginTop:5,padding:"2px 8px",borderRadius:999,background:th.badge,color:th.badgeText,fontSize:11,fontWeight:700}}>{st.label}</div>
+          <div style={{marginTop:6,height:4,background:"rgba(0,0,0,0.07)",borderRadius:99,overflow:"hidden"}}>
+            <div style={{width:`${pct}%`,height:"100%",background:th.bar,borderRadius:99}}/>
+          </div>
+          <div style={{color:"#9AA89C",fontSize:11,marginTop:4}}>
+            {plant.lastWatered?`Watered ${since===0?"today":`${since}d ago`} · every ${plant.frequency}d`:`Every ${plant.frequency}d · not yet logged`}
+          </div>
+          {(plant.careLog?.length>0)&&<div style={{color:"#2C5A34",fontSize:11,marginTop:2,fontWeight:500}}>📋 {plant.careLog.length} notes · tap to view →</div>}
+        </div>
+      </div>
+      <button onClick={e=>{e.stopPropagation();onWater();}} style={{marginTop:10,width:"100%",padding:"10px 0",borderRadius:12,background:flashing?"linear-gradient(135deg,#22C55E,#16A34A)":"linear-gradient(135deg,#3b82f6,#6366f1)",color:"#fff",border:"none",fontWeight:600,fontSize:14,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",gap:6,transition:"all 0.2s"}}>
+        {flashing?"✅ Watered!":"💧 Water Today"}
+      </button>
+    </div>
+  );
+}
+
+function DetailSheet({plant,flashing,onWater,onAddNote,onAddPhoto,onEdit,onDelete,onClose}){
+  const [tab,setTab]=useState("status");
+  const [noteText,setNoteText]=useState("");
+  const [viewPhoto,setViewPhoto]=useState(null);
+  const photoRef=useRef();
+  const st=getStatus(plant);const th=TH[st.color];
+  const since=daysSince(plant.lastWatered);
+  const pct=plant.lastWatered?Math.min(100,Math.round((since/plant.frequency)*100)):0;
+  const nextWater=plant.lastWatered?(()=>{const d=new Date(plant.lastWatered+"T12:00:00");d.setDate(d.getDate()+plant.frequency);return d.toLocaleDateString("en-US",{month:"short",day:"numeric"});})():"Not tracked";
+  const sortedLog=[...(plant.careLog||[])].sort((a,b)=>new Date(b.date)-new Date(a.date));
+  const sortedPhotos=[...(plant.photoHistory||[])].sort((a,b)=>new Date(b.timestamp)-new Date(a.timestamp));
+
+  return(
+    <div style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.5)",display:"flex",alignItems:"flex-end",justifyContent:"center",zIndex:50}} onClick={onClose}>
+      <div onClick={e=>e.stopPropagation()} style={{background:"#fff",width:"100%",maxWidth:540,borderRadius:"22px 22px 0 0",maxHeight:"92vh",display:"flex",flexDirection:"column"}}>
+        <div style={{height:plant.photo?180:90,background:plant.photo?"#111":"linear-gradient(135deg,#D4EDDA,#A8D5B5)",position:"relative",overflow:"hidden",borderRadius:"22px 22px 0 0",flexShrink:0}}>
+          {plant.photo&&<img src={plant.photo} alt="" style={{width:"100%",height:"100%",objectFit:"cover",opacity:0.85}}/>}
+          {!plant.photo&&<div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:52}}>{pEmoji(plant.name)}</div>}
+          <div style={{position:"absolute",top:8,left:"50%",transform:"translateX(-50%)",width:32,height:4,background:"rgba(255,255,255,0.7)",borderRadius:99}}/>
+          <button onClick={onClose} style={{position:"absolute",top:10,right:12,width:30,height:30,borderRadius:"50%",background:"rgba(0,0,0,0.4)",border:"none",color:"#fff",fontSize:14,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center"}}>✕</button>
+          <button onClick={()=>photoRef.current.click()} style={{position:"absolute",bottom:8,right:10,background:"rgba(0,0,0,0.55)",border:"none",color:"#fff",fontSize:12,padding:"5px 10px",borderRadius:8,cursor:"pointer"}}>📷 {plant.photo?"Update":"Add"}</button>
+          {sortedPhotos.length>1&&<button onClick={()=>setTab("photos")} style={{position:"absolute",bottom:8,left:10,background:"rgba(0,0,0,0.55)",border:"none",color:"#fff",fontSize:12,padding:"5px 10px",borderRadius:8,cursor:"pointer"}}>🗂️ {sortedPhotos.length} photos</button>}
+          <input ref={photoRef} type="file" accept="image/*" capture="environment" style={{display:"none"}}
+            onChange={async e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=async ev=>{const c=await compressImage(ev.target.result);onAddPhoto(c);};r.readAsDataURL(f);}}/>
+        </div>
+
+        <div style={{padding:"12px 16px 0",flexShrink:0}}>
+          <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start"}}>
+            <div style={{minWidth:0,flex:1,paddingRight:8}}>
+              <div style={{fontFamily:"'Playfair Display',serif",fontSize:20,fontWeight:700,color:"#1A2C1C",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{plant.name}</div>
+              <div style={{color:"#8A9B8C",fontSize:13}}>📍 {plant.location||"No location"}</div>
+            </div>
+            <div style={{display:"flex",gap:6,flexShrink:0}}>
+              <button onClick={onEdit} style={{padding:"6px 10px",borderRadius:10,border:"1.5px solid #D8E8DA",background:"#fff",color:"#2C5A34",fontWeight:600,fontSize:12,cursor:"pointer"}}>✏️</button>
+              <button onClick={onDelete} style={{padding:"6px 10px",borderRadius:10,border:"1.5px solid #FCA5A5",background:"#fff",color:"#EF4444",fontWeight:600,fontSize:12,cursor:"pointer"}}>🗑️</button>
+            </div>
+          </div>
+          <div style={{display:"flex",gap:0,marginTop:10,background:"#F0F4F1",borderRadius:10,padding:3}}>
+            {[["status","💧 Status"],["journal",`📋 Journal (${plant.careLog?.length||0})`],["photos",`📷 (${sortedPhotos.length})`]].map(([k,l])=>(
+              <button key={k} onClick={()=>setTab(k)} style={{flex:1,padding:"7px 4px",borderRadius:8,border:"none",cursor:"pointer",fontSize:12,fontWeight:600,background:tab===k?"#fff":"transparent",color:tab===k?"#1C3A20":"#7A8E7C",boxShadow:tab===k?"0 1px 4px rgba(0,0,0,0.1)":"none"}}>{l}</button>
+            ))}
+          </div>
+        </div>
+
+        <div style={{flex:1,overflowY:"auto",padding:"12px 16px 28px"}}>
+          {tab==="status"&&(
+            <>
+              <div style={{display:"inline-block",padding:"4px 12px",borderRadius:999,background:th.badge,color:th.badgeText,fontSize:12,fontWeight:700,marginBottom:10}}>{st.label}</div>
+              <div style={{display:"flex",justifyContent:"space-between",fontSize:12,color:"#9AA89C",marginBottom:4}}>
+                <span>Last: {plant.lastWatered?fmtDate(plant.lastWatered+"T12:00:00"):"Not logged"}</span>
+                <span>Next: {nextWater}</span>
+              </div>
+              <div style={{height:8,background:"#E5E7EB",borderRadius:99,overflow:"hidden",marginBottom:6}}>
+                <div style={{width:`${pct}%`,height:"100%",background:th.bar,borderRadius:99}}/>
+              </div>
+              <div style={{color:"#9AA89C",fontSize:12,textAlign:"center",marginBottom:14}}>
+                Every {plant.frequency} days · {plant.lastWatered?(since===0?"watered today":`${since} day${since!==1?"s":""} since last watered`):"tap Water Today to begin"}
+              </div>
+              {sortedLog.find(l=>!l.text.includes("💧")&&!l.text.includes("📷"))&&(
+                <div style={{padding:12,background:"#F6FBF7",borderRadius:14,border:"1.5px solid #D4EDDA",marginBottom:14}}>
+                  <div style={{fontSize:10,fontWeight:700,color:"#5A9A68",textTransform:"uppercase",letterSpacing:0.8,marginBottom:4}}>Latest care note</div>
+                  <div style={{fontSize:13,color:"#3A4E3C",lineHeight:1.6}}>{sortedLog.find(l=>!l.text.includes("💧")&&!l.text.includes("📷"))?.text}</div>
+                  <div style={{fontSize:11,color:"#A0ACA2",marginTop:4}}>→ Tap Journal for full history</div>
+                </div>
+              )}
+              <button onClick={onWater} style={{width:"100%",padding:"14px 0",borderRadius:14,background:flashing?"linear-gradient(135deg,#22C55E,#16A34A)":"linear-gradient(135deg,#3b82f6,#6366f1)",color:"#fff",border:"none",fontWeight:700,fontSize:16,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",gap:8,transition:"all 0.3s"}}>
+                {flashing?"✅ Watered! 🌱":"💧 Water Today"}
+              </button>
+            </>
+          )}
+          {tab==="journal"&&(
+            <>
+              <div style={{marginBottom:14,background:"#F6FBF7",borderRadius:14,padding:12,border:"1.5px solid #D4EDDA"}}>
+                <div style={{fontSize:11,fontWeight:700,color:"#5A9A68",textTransform:"uppercase",letterSpacing:0.8,marginBottom:6}}>Add Care Note</div>
+                <textarea value={noteText} onChange={e=>setNoteText(e.target.value)} placeholder="Observations, fertilizer applied, new growth, pests…" rows={3} style={{width:"100%",padding:"9px 11px",borderRadius:10,border:"1.5px solid #D8E8DA",background:"#fff",fontSize:13,color:"#1A2C1C",outline:"none",resize:"none",boxSizing:"border-box"}}/>
+                <button onClick={()=>{if(noteText.trim()){onAddNote(noteText.trim());setNoteText("");}}} disabled={!noteText.trim()} style={{marginTop:8,width:"100%",padding:"9px 0",borderRadius:10,border:"none",background:noteText.trim()?"linear-gradient(135deg,#1C3A20,#3D7A48)":"#D1D5DB",color:"#fff",fontWeight:600,fontSize:14,cursor:noteText.trim()?"pointer":"default"}}>+ Add Note</button>
+              </div>
+              {sortedLog.length===0&&<div style={{textAlign:"center",padding:"40px 0",color:"#A0ACA2"}}><div style={{fontSize:32}}>📋</div><div style={{marginTop:6}}>No notes yet</div></div>}
+              {sortedLog.map((entry,i)=>(
+                <div key={entry.id||i} style={{display:"flex",gap:10,marginBottom:14,position:"relative"}}>
+                  {i<sortedLog.length-1&&<div style={{position:"absolute",left:13,top:28,width:2,height:"calc(100% + 4px)",background:"#E5E7EB"}}/>}
+                  <div style={{width:26,height:26,borderRadius:"50%",background:entry.source==="claude"?"#EDE9FE":entry.text.includes("💧")?"#DBEAFE":entry.text.includes("📷")?"#FEF3C7":"#F0FDF4",border:`2px solid ${entry.source==="claude"?"#C4B5FD":entry.text.includes("💧")?"#93C5FD":entry.text.includes("📷")?"#FCD34D":"#86EFAC"}`,display:"flex",alignItems:"center",justifyContent:"center",fontSize:11,flexShrink:0,zIndex:1}}>
+                    {entry.source==="claude"?"✨":entry.text.includes("💧")?"💧":entry.text.includes("📷")?"📷":"📝"}
+                  </div>
+                  <div style={{flex:1}}>
+                    <div style={{fontSize:11,color:"#A0ACA2",marginBottom:2}}>{fmtDT(entry.date)}{entry.source==="claude"&&<span style={{color:"#7C3AED",fontWeight:600}}> · from Claude</span>}</div>
+                    <div style={{fontSize:13,color:"#3A4E3C",lineHeight:1.6,background:"#FAFAF9",borderRadius:10,padding:"7px 10px",border:"1px solid #F0F0EE"}}>{entry.text}</div>
+                  </div>
+                </div>
+              ))}
+            </>
+          )}
+          {tab==="photos"&&(
+            <>
+              {sortedPhotos.length===0&&<div style={{textAlign:"center",padding:"40px 0",color:"#A0ACA2"}}><div style={{fontSize:36}}>📷</div><div style={{marginTop:6}}>No photos yet</div><div style={{fontSize:13,marginTop:4}}>Tap "Add" above to start your growth timeline</div></div>}
+              <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8}}>
+                {sortedPhotos.map((p,i)=>(
+                  <div key={i} onClick={()=>setViewPhoto(p)} style={{cursor:"pointer",position:"relative"}}>
+                    <img src={p.url} alt="" style={{width:"100%",aspectRatio:"1",objectFit:"cover",borderRadius:12,display:"block"}}/>
+                    <div style={{position:"absolute",bottom:0,left:0,right:0,background:"linear-gradient(transparent,rgba(0,0,0,0.72))",borderRadius:"0 0 12px 12px",padding:"18px 8px 6px"}}>
+                      <div style={{color:"#fff",fontSize:11,fontWeight:600,textAlign:"center"}}>{fmtDate(p.timestamp)}</div>
+                      {i===0&&<div style={{color:"#86EFAC",fontSize:10,fontWeight:700,textAlign:"center",letterSpacing:0.5}}>LATEST</div>}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+      </div>
+      {viewPhoto&&(
+        <div style={{position:"fixed",inset:0,background:"#000",zIndex:90,display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center"}} onClick={()=>setViewPhoto(null)}>
+          <img src={viewPhoto.url} alt="" style={{maxWidth:"100%",maxHeight:"75vh",objectFit:"contain",borderRadius:8}}/>
+          <div style={{marginTop:14,background:"rgba(255,255,255,0.1)",borderRadius:10,padding:"8px 20px",textAlign:"center"}}>
+            <div style={{color:"#fff",fontSize:15,fontWeight:600}}>{fmtDate(viewPhoto.timestamp)}</div>
+            <div style={{color:"#aaa",fontSize:12,marginTop:2}}>{new Date(viewPhoto.timestamp).toLocaleTimeString("en-US",{hour:"numeric",minute:"2-digit"})}</div>
+          </div>
+          <div style={{color:"#666",fontSize:12,marginTop:10}}>Tap anywhere to close</div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function SettingsSheet({apiKey,onSave,onClose,onExport,onImport}){
+  const [k,setK]=useState(apiKey);
+  return(
+    <div style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.5)",display:"flex",alignItems:"flex-end",justifyContent:"center",zIndex:70}} onClick={onClose}>
+      <div onClick={e=>e.stopPropagation()} style={{background:"#fff",width:"100%",maxWidth:540,borderRadius:"22px 22px 0 0",padding:"20px 20px 44px",maxHeight:"85vh",overflowY:"auto"}}>
+        <div style={{width:32,height:4,background:"#E0E8E1",borderRadius:99,margin:"0 auto 14px"}}/>
+        <div style={{fontFamily:"'Playfair Display',serif",fontSize:20,fontWeight:700,color:"#1A2C1C",marginBottom:14}}>⚙️ Settings</div>
+
+        <div style={{background:"#F0FDF4",border:"1.5px solid #86EFAC",borderRadius:14,padding:14,marginBottom:16}}>
+          <div style={{fontSize:11,fontWeight:700,color:"#166534",textTransform:"uppercase",letterSpacing:0.8,marginBottom:6}}>☁️ Cloud Backup</div>
+          <div style={{fontSize:13,color:"#3A4E3C",marginBottom:10,lineHeight:1.6}}>Your plants save to Supabase automatically. Export creates an extra local backup file. Import restores from that file.</div>
+          <div style={{display:"flex",gap:8}}>
+            <button onClick={onExport} style={{flex:1,padding:"10px 0",borderRadius:12,border:"none",background:"linear-gradient(135deg,#1C3A20,#3D7A48)",color:"#fff",fontWeight:600,cursor:"pointer",fontSize:13}}>⬇️ Export backup</button>
+            <button onClick={onImport} style={{flex:1,padding:"10px 0",borderRadius:12,border:"1.5px solid #2C5A34",background:"#fff",color:"#2C5A34",fontWeight:600,cursor:"pointer",fontSize:13}}>⬆️ Import backup</button>
+          </div>
+        </div>
+
+        <div style={{color:"#8A9B8C",fontSize:13,marginBottom:8,lineHeight:1.6}}>Anthropic API key for AI plant identification. Free at <strong>console.anthropic.com</strong> → API Keys.</div>
+        <label style={{fontSize:11,fontWeight:600,color:"#7A8E7C",textTransform:"uppercase",letterSpacing:0.8,display:"block",marginBottom:4}}>API Key</label>
+        <input value={k} onChange={e=>setK(e.target.value)} placeholder="sk-ant-..." type="password" style={{width:"100%",padding:"10px 12px",borderRadius:10,border:"1.5px solid #D8E8DA",background:"#FAFDF9",fontSize:14,outline:"none",marginBottom:14,boxSizing:"border-box"}}/>
+        <div style={{display:"flex",gap:8}}>
+          <button onClick={onClose} style={{flex:1,padding:"12px 0",borderRadius:12,border:"1.5px solid #D8E8DA",background:"#fff",color:"#5C6B5E",fontWeight:600,cursor:"pointer"}}>Cancel</button>
+          <button onClick={()=>onSave(k)} style={{flex:1,padding:"12px 0",borderRadius:12,border:"none",background:"linear-gradient(135deg,#1C3A20,#3D7A48)",color:"#fff",fontWeight:600,cursor:"pointer"}}>Save</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PlantModal({mode,plant,apiKey,onSave,onClose}){
+  const [name,setName]=useState(plant?.name||"");
+  const [location,setLocation]=useState(plant?.location||"");
+  const [frequency,setFrequency]=useState(plant?.frequency||7);
+  const [lastWatered,setLastWatered]=useState(plant?.lastWatered||"");
+  const [photo,setPhoto]=useState(plant?.photo||null);
+  const [identifying,setIdentifying]=useState(false);
+  const [aiError,setAiError]=useState(null);
+  const [aiDone,setAiDone]=useState(false);
+  const [initialNote,setInitialNote]=useState("");
+  const fileRef=useRef();
+
+  const handleFile=async e=>{
+    const f=e.target.files[0];if(!f)return;
+    const r=new FileReader();
+    r.onload=async ev=>{
+      const compressed=await compressImage(ev.target.result);
+      setPhoto(compressed);
+      if(mode==="add"){
+        if(!apiKey){setAiError("No API key — tap ⚙️ to add one.");return;}
+        setIdentifying(true);setAiError(null);setAiDone(false);
+        try{
+          const res=await identifyPlant(ev.target.result.split(",")[1],f.type||"image/jpeg",apiKey);
+          setName(toTitleCase(res.name||""));setFrequency(res.frequency||7);setInitialNote(res.initialNote||"");setAiDone(true);
+        }catch(err){setAiError("Couldn't identify — fill in manually. ("+err.message+")");}
+        finally{setIdentifying(false);}
+      }
+    };
+    r.readAsDataURL(f);
+  };
+
+  const handleSave=()=>{
+    const careLog=plant?.careLog?[...plant.careLog]:[];
+    if(mode==="add"&&initialNote)careLog.push({id:`ai${Date.now()}`,date:getNowStr(),text:initialNote,source:"claude"});
+    const photoHistory=plant?.photoHistory?[...plant.photoHistory]:[];
+    if(mode==="add"&&photo)photoHistory.push({url:photo,timestamp:getNowStr()});
+    onSave({id:plant?.id,name:toTitleCase(name),location,frequency,lastWatered:lastWatered||null,photo,photoHistory,careLog});
+  };
+
+  const inp={width:"100%",padding:"10px 12px",borderRadius:10,border:"1.5px solid #D8E8DA",background:"#FAFDF9",fontSize:15,color:"#1A2C1C",outline:"none",boxSizing:"border-box"};
+
+  return(
+    <div style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.5)",display:"flex",alignItems:"flex-end",justifyContent:"center",zIndex:60}}>
+      <div style={{background:"#fff",width:"100%",maxWidth:540,borderRadius:"22px 22px 0 0",maxHeight:"92vh",overflowY:"auto"}}>
+        <div style={{padding:"16px 16px 40px"}}>
+          <div style={{width:32,height:4,background:"#E0E8E1",borderRadius:99,margin:"0 auto 12px"}}/>
+          <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:12}}>
+            <div style={{fontFamily:"'Playfair Display',serif",fontSize:20,fontWeight:700,color:"#1A2C1C"}}>{mode==="add"?"🌱 Add Plant":"✏️ Edit Plant"}</div>
+            <button onClick={onClose} style={{background:"none",border:"none",fontSize:20,color:"#A0ACA2",cursor:"pointer"}}>✕</button>
+          </div>
+
+          {mode==="add"&&(
+            <div style={{marginBottom:10,padding:"9px 12px",background:"#F0FDF4",border:"1.5px solid #86EFAC",borderRadius:12,fontSize:13,color:"#166534"}}>
+              <strong>✨ AI-powered</strong> — photo → Claude identifies plant, watering schedule & care notes.{!apiKey&&<span style={{color:"#92400E"}}> <strong>No API key</strong> — tap ⚙️.</span>}
+            </div>
+          )}
+
+          <button onClick={()=>fileRef.current.click()} style={{width:"100%",height:120,borderRadius:16,border:aiDone?"2px solid #86EFAC":"2px dashed #A8D5B5",background:photo?"transparent":"#F6FBF7",overflow:"hidden",cursor:"pointer",position:"relative",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",marginBottom:12}}>
+            {photo&&<img src={photo} alt="" style={{width:"100%",height:"100%",objectFit:"cover",position:"absolute",inset:0}}/>}
+            {identifying&&<div style={{position:"absolute",inset:0,background:"rgba(28,58,32,0.87)",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:6}}><div style={{fontSize:28}}>🔍</div><div style={{color:"#A8D5B5",fontSize:14,fontWeight:600}}>Identifying…</div></div>}
+            {aiDone&&!identifying&&<div style={{position:"absolute",bottom:6,left:6,right:6,background:"rgba(28,58,32,0.88)",borderRadius:8,padding:"5px 10px"}}><span style={{color:"#A8D5B5",fontSize:12,fontWeight:600}}>✨ Identified — review below</span></div>}
+            {!photo&&!identifying&&<><span style={{fontSize:28}}>📷</span><span style={{fontSize:13,color:"#5A9A68",marginTop:4}}>Take or upload a photo</span></>}
+          </button>
+          <input ref={fileRef} type="file" accept="image/*" capture="environment" style={{display:"none"}} onChange={handleFile}/>
+          {aiError&&<div style={{marginBottom:10,padding:"8px 12px",background:"#FFF7ED",border:"1px solid #FDBA74",borderRadius:10,fontSize:13,color:"#92400E"}}>⚠️ {aiError}</div>}
+
+          <div style={{display:"flex",flexDirection:"column",gap:11}}>
+            <div>
+              <div style={{fontSize:11,fontWeight:600,color:"#7A8E7C",textTransform:"uppercase",letterSpacing:0.8,marginBottom:4}}>Plant Name *</div>
+              <input value={name} onChange={e=>setName(e.target.value)} onBlur={e=>setName(toTitleCase(e.target.value))} placeholder="e.g. Fiddle Leaf Fig" style={inp}/>
+            </div>
+            <div>
+              <div style={{fontSize:11,fontWeight:600,color:"#7A8E7C",textTransform:"uppercase",letterSpacing:0.8,marginBottom:4}}>Location</div>
+              <input value={location} onChange={e=>setLocation(e.target.value)} placeholder="e.g. Kitchen Window, Back Patio" style={inp}/>
+            </div>
+            <div>
+              <div style={{fontSize:11,fontWeight:600,color:"#7A8E7C",textTransform:"uppercase",letterSpacing:0.8,marginBottom:4}}>Water Every — {frequency} days</div>
+              <input type="range" min="1" max="30" value={frequency} onChange={e=>setFrequency(+e.target.value)} style={{width:"100%",accentColor:"#2C5A34"}}/>
+              <div style={{display:"flex",justifyContent:"space-between",fontSize:11,color:"#A0ACA2",marginTop:2}}><span>Daily</span><span>2 weeks</span><span>Monthly</span></div>
+            </div>
+            <div>
+              <div style={{fontSize:11,fontWeight:600,color:"#7A8E7C",textTransform:"uppercase",letterSpacing:0.8,marginBottom:4}}>Last Watered</div>
+              <input type="date" value={lastWatered} onChange={e=>setLastWatered(e.target.value)} style={inp}/>
+            </div>
+            {mode==="add"&&(
+              <div>
+                <div style={{fontSize:11,fontWeight:600,color:"#7A8E7C",textTransform:"uppercase",letterSpacing:0.8,marginBottom:4}}>Initial Care Notes{aiDone?" · ✨ AI-generated":""}</div>
+                <textarea value={initialNote} onChange={e=>setInitialNote(e.target.value)} rows={3} placeholder="Care tips, light needs, fertilizer…" style={{...inp,resize:"none"}}/>
+              </div>
+            )}
+          </div>
+
+          <div style={{display:"flex",gap:8,marginTop:16}}>
+            <button onClick={onClose} style={{flex:1,padding:"13px 0",borderRadius:12,border:"1.5px solid #D8E8DA",background:"#fff",color:"#5C6B5E",fontWeight:600,cursor:"pointer"}}>Cancel</button>
+            <button onClick={handleSave} disabled={!name.trim()||identifying} style={{flex:1,padding:"13px 0",borderRadius:12,border:"none",background:(name.trim()&&!identifying)?"linear-gradient(135deg,#1C3A20,#3D7A48)":"#D1D5DB",color:"#fff",fontWeight:600,cursor:(name.trim()&&!identifying)?"pointer":"default"}}>
+              {identifying?"Identifying…":mode==="add"?"Add Plant":"Save"}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const root=ReactDOM.createRoot(document.getElementById("root"));
+root.render(React.createElement(App));
+
+</script>
+</body>
+</html>
